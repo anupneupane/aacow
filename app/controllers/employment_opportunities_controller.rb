@@ -1,0 +1,2 @@
+class EmploymentOpportunitiesController < ApplicationController
+end

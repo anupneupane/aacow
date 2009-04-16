@@ -1,0 +1,2 @@
+class EmploymentOpportunity < Opportunity
+end

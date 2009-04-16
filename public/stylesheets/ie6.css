@@ -1,0 +1,7 @@
+body{
+	width:expression(document.documentElement.clientWidth < 898 ? "898px" : "auto");
+}
+.user-area-bg,
+.user-area-foot{background:none;}
+.user-area-foot{filter:progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-user-area-foot.png', sizingmethod='crop');}
+.user-area-bg{filter:progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-user-area-repeat.png', sizingmethod='scale');}

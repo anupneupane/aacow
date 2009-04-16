@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<title><%= "#{h @page_title} - " if @page_title %>AACOW</title>
+	<%= stylesheet_link_tag 'all' %>
+	<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="css/ie6.css" media="screen"/><![endif]-->
+  <%= javascript_include_tag :defaults %>
+</head>
+<body>
+<div id="header">
+	<div class="holder">
+		<div class="user-area">
+			<div class="user-area-bg">
+				<div class="user-area-content">
+					<ul>
+						<li><a href="#">PATIENT LOGIN</a></li>
+						<li><a href="#">MAKE AN APPOINTMENT</a></li>
+					</ul>
+					<p>Now accepting new patients</p>
+				</div>
+			</div>
+			<div class="user-area-foot">&nbsp;</div>
+		</div>
+		<strong class="logo"><%= link_to "Home", root_path , :rel => "home"  %></strong>
+		<ul class="nav">
+			<li <%= "class='active'" if request.request_uri == root_path %>><%= link_to "Home", root_path , :class => "home"  %></li>
+			<li <%= "class='active'" if request.request_uri == about_us_path %>><%= link_to "About Us", about_us_path, :class => "about-us" %></li>
+			<li <%= "class='active'" if request.request_uri == services_path %>><%= link_to "Our Services", services_path, :class => "our-services" %></li>
+			<li <%= "class='active'" if request.request_uri == patients_path %>><%= link_to "Patients", patients_path, :class => "patients" %></li>
+			<li <%= "class='active'" if request.request_uri == contact_us_path %>><%= link_to "Contact Us", contact_us_path, :class => "contact-us" %></li>
+		</ul>
+	</div>
+</div>

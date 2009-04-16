@@ -1,0 +1,35 @@
+<h1>Users</h1>
+
+<%# will_paginate @users %>
+
+<table border="0" cellspacing="0" cellpadding="0" class="wide forums">
+  <tr>
+    <th class="la" width="88%"><%= 'Name / Login' %></th>
+	<% if logged_in? && current_user.admin? -%>
+	<th><%= "Current Status" %></th>
+	<% end -%>
+    <th></th>
+    <th width="1%">Actions</th>
+  </tr>
+<%- unless @users.nil?  -%>
+<% @users.each do |user| -%>  
+  <tr>
+    <td><%= link_to h(user.display_name || user.login), user, :class => (user.admin? ? "admin" : nil) %>
+      <span style="color:#666">
+      <%= "(admin)" if user.admin? %>
+      </span>
+	  </td>
+	<% if logged_in? && current_user.admin? -%>
+		<td><%= user.state %></td>
+	<% end -%>
+    <td class="la">
+      <% unless user.website.blank? %>
+      <%= sanitize link_to(user.website.gsub("http://",""), "http://" + user.website.gsub("http://","")) %>
+      <% end %>
+    </td>
+    <td class="ca inv"><%= user.posts.size %></td>
+  </tr>
+<% end %>
+</table>
+<%- end -%>
+<%# will_paginate @users %>

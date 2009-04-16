@@ -1,0 +1,24 @@
+<%= render :partial => "layouts/head" %>
+<div id="content">
+	<div class="holder">
+		<div id="main-column">
+			<%= yield %>
+		</div>
+		<div id="sidebar">
+		 	<%= yield :right %>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<div class="holder">
+		<strong class="slogan">Allergy and Asthma Care of Waco <em>Improving your quality of life.</em></strong>
+		<ul>
+			<li><a href="#">Site Map</a></li>
+			<li><a href="#">Notice of Privacy Practices</a></li>
+			<li><a href="#">Disclaimer</a></li>
+		</ul>
+		<p>Copyright 2008 AACOW, LLC. All Rights Reserved</p>
+	</div>
+</div>
+</body>
+</html>

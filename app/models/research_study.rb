@@ -1,0 +1,2 @@
+class ResearchStudy < Opportunity
+end
