@@ -45,9 +45,8 @@ class Admin::EmploymentOpportunitiesController < Admin::AdminController
 
     respond_to do |format|
       if @employment_opportunity.save
-        flash[:notice] = 'EmploymentOpportunity was successfully created.'
-        format.html { redirect_to(@employment_opportunity) }
-        format.xml  { render :xml => @employment_opportunity, :status => :created, :location => @employment_opportunity }
+        flash[:notice] = 'Employment Opportunity was successfully created.'
+        format.html { redirect_to admin_employment_opportunity_path(@employment_opportunity) }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @employment_opportunity.errors, :status => :unprocessable_entity }
@@ -62,8 +61,8 @@ class Admin::EmploymentOpportunitiesController < Admin::AdminController
 
     respond_to do |format|
       if @employment_opportunity.update_attributes(params[:employment_opportunity])
-        flash[:notice] = 'EmploymentOpportunity was successfully updated.'
-        format.html { redirect_to(@employment_opportunity) }
+        flash[:notice] = 'Employment Opportunity was successfully updated.'
+        format.html { redirect_to admin_employment_opportunity_path(@employment_opportunity) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +78,7 @@ class Admin::EmploymentOpportunitiesController < Admin::AdminController
     @employment_opportunity.destroy
 
     respond_to do |format|
-      format.html { redirect_to(opportunities_url) }
+      format.html { redirect_to(admin_employment_opportunities_url) }
       format.xml  { head :ok }
     end
   end

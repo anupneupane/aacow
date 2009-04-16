@@ -1,6 +1,6 @@
 <h1>Editing research stdy</h1>
 
-<% form_for(@research_study) do |f| %>
+<% form_for :research_study, @research_study, :url => { :action => "update" } do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -8,5 +8,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @research_study %> |
+<%= link_to 'Show', admin_research_study_path(@research_study) %> |
 <%= link_to 'Back', admin_research_studies_path %>

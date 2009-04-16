@@ -1,6 +1,6 @@
 <h1>New employment opportunity</h1>
 
-<% form_for(@employment_opportunity) do |f| %>
+<% form_for :employment_opportunity, @employment_opportunity, :url => { :action => "create" } do |f| %>
   <%= f.error_messages %>
 
   <p>

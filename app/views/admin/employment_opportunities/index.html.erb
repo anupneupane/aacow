@@ -6,9 +6,9 @@
 
 <% @employment_opportunities.each do |opportunity| %>
   <tr>
-    <td><%= link_to 'Show', opportunity %></td>
+    <td><%= link_to 'Show', admin_employment_opportunity_path(opportunity) %></td>
     <td><%= link_to 'Edit', edit_admin_employment_opportunity_path(opportunity) %></td>
-    <td><%= link_to 'Destroy', opportunity, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', admin_employment_opportunity_path(opportunity), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

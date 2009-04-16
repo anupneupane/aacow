@@ -4,11 +4,11 @@
   <tr>
   </tr>
 
-<% @research_studies.each do |opportunity| %>
+<% @research_studies.each do |research_study| %>
   <tr>
-    <td><%= link_to 'Show', opportunity %></td>
-    <td><%= link_to 'Edit', edit_admin_research_study_path(opportunity) %></td>
-    <td><%= link_to 'Destroy', opportunity, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', research_study %></td>
+    <td><%= link_to 'Edit', edit_admin_research_study_path(research_study) %></td>
+    <td><%= link_to 'Destroy', admin_research_study_path(research_study), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

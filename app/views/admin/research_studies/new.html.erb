@@ -1,6 +1,6 @@
 <h1>New research study</h1>
 
-<% form_for(@research_study) do |f| %>
+<% form_for :research_study, @research_study, :url => { :action => "create" } do |f| %>
   <%= f.error_messages %>
 
   <p>

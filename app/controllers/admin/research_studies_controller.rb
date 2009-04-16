@@ -7,7 +7,7 @@ class Admin::ResearchStudiesController < Admin::AdminController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @opportunities }
+      format.xml  { render :xml => @research_studies }
     end
   end
 
@@ -45,12 +45,10 @@ class Admin::ResearchStudiesController < Admin::AdminController
 
     respond_to do |format|
       if @research_study.save
-        flash[:notice] = 'ResearchStudy was successfully created.'
-        format.html { redirect_to(@research_study) }
-        format.xml  { render :xml => @research_study, :status => :created, :location => @research_study }
+        flash[:notice] = 'Research Study was successfully created.'
+        format.html { redirect_to admin_research_study_path(@research_study) }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @research_study.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -62,8 +60,8 @@ class Admin::ResearchStudiesController < Admin::AdminController
 
     respond_to do |format|
       if @research_study.update_attributes(params[:research_study])
-        flash[:notice] = 'ResearchStudy was successfully updated.'
-        format.html { redirect_to(@research_study) }
+        flash[:notice] = 'Research Study was successfully updated.'
+        format.html { redirect_to admin_research_study_path(@research_study) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +77,7 @@ class Admin::ResearchStudiesController < Admin::AdminController
     @research_study.destroy
 
     respond_to do |format|
-      format.html { redirect_to(opportunities_url) }
+      format.html { redirect_to(admin_research_studies_url) }
       format.xml  { head :ok }
     end
   end

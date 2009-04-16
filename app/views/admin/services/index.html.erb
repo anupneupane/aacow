@@ -8,7 +8,7 @@
   <tr>
     <td><%= link_to 'Show', service %></td>
     <td><%= link_to 'Edit', edit_admin_service_path(service) %></td>
-    <td><%= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', admin_service_path(service), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

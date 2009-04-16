@@ -46,11 +46,9 @@ class Admin::ServicesController < Admin::AdminController
     respond_to do |format|
       if @service.save
         flash[:notice] = 'Service was successfully created.'
-        format.html { redirect_to(@service) }
-        format.xml  { render :xml => @service, :status => :created, :location => @service }
+        format.html { redirect_to admin_service_path(@service) }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @service.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -63,7 +61,7 @@ class Admin::ServicesController < Admin::AdminController
     respond_to do |format|
       if @service.update_attributes(params[:service])
         flash[:notice] = 'Service was successfully updated.'
-        format.html { redirect_to(@service) }
+        format.html { redirect_to admin_service_path(@service) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +77,7 @@ class Admin::ServicesController < Admin::AdminController
     @service.destroy
 
     respond_to do |format|
-      format.html { redirect_to(services_url) }
+      format.html { redirect_to(admin_services_path) }
       format.xml  { head :ok }
     end
   end
