@@ -1,6 +1,37 @@
 <% @page_title = 'Patients' %>
+<%- content_for :right do -%>
+<div class="brown-box">
+	<h3>NEW APPOINTMENT CHECKLIST:</h3>
+	<ul class="list">
+		<li>Items to bring:
+			<ul class="sub_list">
+				<li>Completed forms </li>
+				<li>Insurance card </li>
+				<li>Referral </li>
+				<li>Questions and allergy concerns</li>
+			</ul>
+		</li>
+		<li>At your visit:
+			<ul class="sub_list">
+				<li>Medical history eval</li>
+				<li>Questions about symptoms and triggers</li>
+				<li>Exam</li>
+				<li>Further tests as needed</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div class="box green-box">
+	<p>Help us understand more about how to better combat allergies.</p>
+	<p class="note"><strong>Join our allergy research team</strong></p>
+	<div class="foot"><a href="#">PARTICIPATION INFO</a></div>
+</div>
+<%= render :partial => 'layouts/vcard' %>
+<%- end -%>
 	<h1>New patients</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	<h2>What you should have before your visit and what to expect during your first visit to our clinic.</h2>
+	<p>When arriving for your first visit, please have the new patient forms completed. They can be accessed at the link below or will be mailed to you in advance of your appointment, just let the person scheduling your appointment know.  Individual forms can be downloaded at the bottom of this page.</p>
 	<div class="container large-container">
 		<div class="container-foot">
 			<h2>NEW PATIENT FORMS:</h2>
@@ -11,7 +42,8 @@
 		</div>
 	</div>
 	<h2>Insurance information</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	<p>Our office accepts most of the major HMO and PPO insurance plans in addition to Medicaid and Medicare. 
+	Please have your insurance card and referral on hand upon arriving at the Clinic. Your insurance information will be reviewed regarding coverage of your visit and possible allergy testing that will be done that day.</p>
 	<div class="lists">
 		<ul class="list">
 			<li><a href="#"> Insurance option 1</a></li>
@@ -35,5 +67,41 @@
 			<li><a href="#"> Insurance option 15</a></li>
 		</ul>
 	</div>
-	<h2>Directions to our office</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	<h2>Allergy symptoms and further questions</h2>
+	<p>Please write down any questions or concerns prior to your visit so that they can be addressed during your visit. Dr. Daftary will discuss your current allergy/asthma symptoms and past medical history.</p>
+	
+	<h2>During your visit with Dr. Daftary</h2>
+	
+	<p>Several questions will be asked regarding you home and work environment to determine if any changes should be made to your environment to decrease your exposure to allergens. Dr. Daftary will perform an exam to look at your ears, eyes, nose, throat and skin and listen to your heart and lungs.</p>
+	
+	<p>Dr. Daftary may recommend skin allergy testing for you to help her evaluate which allergens may be making you sick. We test for environmental allergens such as trees, grasses, weeds, molds, house dust and dust mites as well as selected food testing. Most skin testing is done on the back and we use a plastic device to apply the allergy serum to your back. The testing device does not break the skin and no bleeding is involved. The serum remains on your back for 20 minutes before being read and you may notice an itching sensation to some areas. Dr. Daftary will then read the testing on your back and discuss which allergens you are most allergic to.</p>
+	
+	<p>If you have problems with wheezing, coughing, shortness of breath or chest tightness, Dr. Daftary will evaluate your lung function by having you blow into a mouthpiece several times.</p>
+	
+	<p>Depending on your allergy testing results and pulmonary results, Dr. Daftary will recommend environmental controls, medications to relieve your symptoms and may recommend that you start on allergy injections to decrease your sensitivity to allergens. One of our nurses will also review ways to decrease your exposure to allergens in your home and work environment. </p>
+	
+	<h2>At your next appointments</h2>
+	
+	<p>During your follow-up visits, retesting of allergens or sick visits you will be cared for by either Dr. Daftary or the Nurse Practitioner, Patricia Tatum.</p>
+	
+	<h2>We look forward to seeing you at first visit!</h2>
+	
+	<p>We hope this description has answered many of your questions about the first visit to our office. We are always here to help and answer any additional questions you may have. Please do not hesitate to ask! You may also view our FAQ (link: …/faq) for a few additional answers.</p>
+	
+	<p>If you are ready to schedule you can set your appointment here <%= link_to 'schedule', schedule_path %> or call our offices at (254) 753-3646.</p>
+	
+	<p>Need our Clinic hours and driving directions? Click here.  <%= link_to 'contact us', contact_us_path %> </p>
+	
+	<div class="container large-container">
+		<div class="container-foot">
+			<h2>INDIVIDUAL NEW PATIENT FORMS:</h2>
+			<ul class="pdf-list">
+				<li><a href="#">Patient Information</a></li>
+				<li><a href="#">Allergy Profile</a></li>
+				<li><a href="#">Notice of Privacy Practices</a></li>
+				<li><a href="#">Payment Policy</a></li>
+				<li><a href="#">General Clinic Information</a></li>
+			</ul>
+		</div>
+	</div>
+			<p class="quiet">Please read over print these forms and complete them prior to your first visit. If you are unable to complete these forms at home, please arrive 20 minutes before your scheduled appointment, as you will need to complete them before being seen.</p>

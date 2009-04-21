@@ -3,63 +3,38 @@
 <div class="box blue-box">
 	<p>Our goal is to make sure every patient goes home happier and healthier.</p>
 	<p class="note"><strong>Let us know how we are doing.</strong></p>
-	<div class="foot"><a href="#">SUBMIT FEEDBACK</a></div>
+	<div class="foot"><a href="satisfaction">SUBMIT FEEDBACK</a></div>
 </div>
-<div class="vcard">
-	<a class="fn org url" href="#">AACOW</a>
-	<h3>OUR OFFICES</h3>
-	<h4>Location</h4>
-	<div class="adr">
-		<div class="street-address">3115 Pine Ave # 1008</div>
-		<span class="locality">Waco,  76708</span>,
-		<abbr class="region" title="Texas">TX</abbr>
-		<span class="postal-code">76708</span>
-		<a href="#">Get directions</a>
-	</div>
-	<h4>Contact information</h4>
-	<div class="tel">
-		<span class="type">P:</span>(254) 753-3646
-	</div>
-	<div class="tel">
-		<span class="type">F:</span>(XXX) XXX-XXXX
-	</div>
-	<div>E:
-		<span class="email">&#105;&#110;&#102;&#111;&#064;&#097;&#097;&#099;&#111;&#119;&#046;&#099;&#111;&#109;</span>
-	</div>
-</div>
+<%= render :partial => 'layouts/vcard' %>
 <%- end -%>
 <h1>Why Allergy and Asthma Care of Waco?</h1>
 <p>Our primary goal is to improve your quality of life by determining what triggers your allergy or asthma symptoms, providing extensive education on how to modify your environment to better control exposure to those triggers and providing you with other treatment options such as medications or immunotherapy (allergy injections).</p>
 <div class="info">
 	<strong class="heading">Meet our doctors and staff:</strong>
 	<ul class="link-list">
-		<li><a href="#">Pramila  K.</a></li>
-		<li><a href="#">Daftary,</a></li>
-		<li><a href="#">MD,</a></li>
-		<li><a href="#">FACAI,</a></li>
-		<li><a href="#">FAACA</a></li>
+		<li><a href="/about_us">Pramila  K. Daftary, MD, FACAI, FAACA</a></li>
 	</ul>
 </div>
 <div class="container">
 	<div class="container-foot">
 		<h2>LEARN MORE ABOUT ALLERGIES AND ASTHMA</h2>
 		<div class="post">
-			<div class="image-holder image-left"><a href="#"><img src="images/img-photo-1.jpg" alt=""/></a></div>
-			<h3 class="large"><a href="#">Tips for allergy sufferers</a></h3>
+			<div class="image-holder image-left"><a href="tips"><img src="images/img-photo-1.jpg" alt=""/></a></div>
+			<h3 class="large"><a href="tips">Tips for allergy sufferers</a></h3>
 			<p>Here are some useful tips for allergy sufferers to help alleviate the pitfalls of allergies.</p>
-			<a href="#" class="more">View tips for alleving allergies</a>
+			<a href="tips" class="more">View tips for alleving allergies</a>
 		</div>
 		<div class="post">
-			<div class="image-holder image-left"><a href="#"><img src="images/img-photo-2.jpg" alt=""/></a></div>
-			<h3><a href="#">Why I should I see an Allergist?</a></h3>
+			<div class="image-holder image-left"><a href="tips"><img src="images/img-photo-2.jpg" alt=""/></a></div>
+			<h3><a href="tips">Why I should I see an Allergist?</a></h3>
 			<p>Learn the facts about why seeing an Allergist can be beneficial to your overall health and well being.</p>
-			<a href="#" class="more">Learn the right time to see an allergist</a>
+			<a href="tips" class="more">Learn the right time to see an allergist</a>
 		</div>
 		<div class="post">
-			<div class="image-holder image-left"><a href="#"><img src="images/img-photo-3.jpg" alt=""/></a></div>
+			<div class="image-holder image-left"><a href="tips"><img src="images/img-photo-3.jpg" alt=""/></a></div>
 			<h3><a href="#">Understanding Allergies &amp; Asthma</a></h3>
 			<p>Asthma has often been described as a wheezing sound when you breathe, but asthma is so much more! </p>
-			<a href="#" class="more">Get the facts about asthma</a>
+			<a href="tips" class="more">Get the facts about asthma</a>
 		</div>
 	</div>
 </div>

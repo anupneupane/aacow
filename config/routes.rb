@@ -11,8 +11,18 @@ ActionController::Routing::Routes.draw do |map|
     page.patient_privacy 'patient_privacy', :action => 'patient_privacy'
     page.contact_us 'contact_us', :action => 'contact_us'
     page.our_services 'our_services', :action => 'our_services'
+    page.tips 'tips', :action => 'tips'
+    page.satisfaction 'satisfaction', :action => 'satisfaction'
+    page.schedule 'schedule', :action => 'schedule'
+    page.patient_privacy_practices 'patient_privacy_practices', :action => 'patient_privacy_practices'
+    page.disclaimer 'disclaimer', :action => 'disclaimer'
+    page.site_map 'site_map', :action => 'site_map'
   end
   
+  map.send_contact_form '/send_contact_form', :controller => 'pages', :action => 'send_contact_form'
+  map.send_satisfaction_survey 'send_satisfaction_survey', :controller => 'pages', :action => 'send_satisfaction_survey'
+  map.patient_privacy_practices 'patient_privacy_practices', :controller => 'pages', :action => 'patient_privacy_practices'  
+   
   # Admin resources
   map.admin '/admin', :controller => 'admin/main', :action => 'index'
   map.resources :employment_opportunities, :controller => 'admin/employment_opportunities', :name_prefix => 'admin_', :path_prefix => '/admin'
@@ -27,7 +37,7 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'admin/sessions', :action => 'new', :name_prefix => 'admin_', :path_prefix => '/admin'  
   map.register '/register', :controller => 'admin/users', :action => 'create', :name_prefix => 'admin_', :path_prefix => '/admin'  
   map.signup '/signup', :controller => 'admin/users', :action => 'new', :name_prefix => 'admin_', :path_prefix => '/admin'
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
