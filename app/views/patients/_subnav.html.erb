@@ -1,0 +1,20 @@
+<ul class="tabs primary clear">
+	<li<%= " class='active'" if request.request_uri == patients_path %>>
+		<a href="/patients" <%= "class='active'" if request.request_uri == patients_path %>>New Patients</a>
+		</li>
+	<li<%= " class='active'" if request.request_uri == patients_faq_path %>>
+		<a <%= "class='active'" if request.request_uri == patients_faq_path %> href="/patients/faq" title="View your purchased files.">FAQ</a>
+	</li>
+	<li<%= " class='active'" if request.request_uri == patients_tips_path %>>
+		<a <%= "class='active'" if request.request_uri == patients_tips_path %> href="/patients/tips" title="View your order history.">Tips</a>
+	</li>
+	<li<%= " class='active'" if request.request_uri == patients_records_path %>>
+		<a <%= "class='active'" if request.request_uri == patients_records_path %> href="/patients/records">New &amp; Existing Patient Records</a>
+	</li>
+	<li<%= " class='active'" if request.request_uri == patients_schedule_path %>>
+		<a <%= "class='active'" if request.request_uri == patients_schedule_path %> href="/patients/schedule">Schedule an Appointment</a>
+	</li>
+	<li<%= " class='active'" if request.request_uri == patients_privacy_path %>>
+		<a <%= "class='active'" if request.request_uri == patients_privacy_path %> href="/patients/privacy">Rights &amp; Responsibilities</a>
+	</li>
+</ul>

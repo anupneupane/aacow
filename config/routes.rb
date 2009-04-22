@@ -3,18 +3,22 @@ ActionController::Routing::Routes.draw do |map|
   # STI
   map.resources :services, :employment_opportunities, :users, :research_studies
   
+  map.patients '/patients', :controller => 'patients'
+  
+  map.with_options :controller => 'patients' do |page|
+    page.tips 'tips', :action => 'tips', :path_prefix => '/patients', :name_prefix => 'patients_'
+    page.satisfaction 'satisfaction', :action => 'satisfaction', :path_prefix => '/patients', :name_prefix => 'patients_'
+    page.schedule 'schedule', :action => 'schedule', :path_prefix => '/patients', :name_prefix => 'patients_'
+    page.privacy 'privacy', :action => 'privacy', :path_prefix => '/patients', :name_prefix => 'patients_'
+    page.faq 'faq', :action => 'faq', :path_prefix => '/patients', :name_prefix => 'patients_'
+    page.records 'records', :action => 'records', :path_prefix => '/patients', :name_prefix => 'patients_'
+  end
+  
   # Static pages
   map.with_options :controller => 'pages' do |page|
     page.about_us 'about_us', :action => 'about_us'
-    page.patients 'patients', :action => 'patients'
-    page.patient_satisfaction 'patient_satisfaction', :action => 'patient_satisfaction'
-    page.patient_privacy 'patient_privacy', :action => 'patient_privacy'
     page.contact_us 'contact_us', :action => 'contact_us'
     page.our_services 'our_services', :action => 'our_services'
-    page.tips 'tips', :action => 'tips'
-    page.satisfaction 'satisfaction', :action => 'satisfaction'
-    page.schedule 'schedule', :action => 'schedule'
-    page.patient_privacy_practices 'patient_privacy_practices', :action => 'patient_privacy_practices'
     page.disclaimer 'disclaimer', :action => 'disclaimer'
     page.site_map 'site_map', :action => 'site_map'
   end
