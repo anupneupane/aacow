@@ -9,12 +9,15 @@
 		<a <%= "class='active'" if request.request_uri == patients_tips_path %> href="/patients/tips" title="View your order history.">Tips</a>
 	</li>
 	<li<%= " class='active'" if request.request_uri == patients_records_path %>>
-		<a <%= "class='active'" if request.request_uri == patients_records_path %> href="/patients/records">New &amp; Existing Patient Records</a>
+		<a <%= "class='active'" if request.request_uri == patients_records_path %> href="/patients/records">Records</a>
 	</li>
 	<li<%= " class='active'" if request.request_uri == patients_schedule_path %>>
 		<a <%= "class='active'" if request.request_uri == patients_schedule_path %> href="/patients/schedule">Schedule an Appointment</a>
 	</li>
 	<li<%= " class='active'" if request.request_uri == patients_privacy_path %>>
 		<a <%= "class='active'" if request.request_uri == patients_privacy_path %> href="/patients/privacy">Rights &amp; Responsibilities</a>
+	</li>
+	<li<%= " class='active'" if request.request_uri == patients_satisfaction_path %>>
+		<a <%= "class='active'" if request.request_uri == patients_satisfaction_path %> href="/patients/satisfaction">Satisfaction Survey</a>
 	</li>
 </ul>

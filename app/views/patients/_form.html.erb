@@ -1,0 +1,73 @@
+<%= content_tag 'div', h(flash[:notice]), :class => 'flash', :id => 'flash' if flash[:notice] %>
+<%= content_tag 'div', h(flash[:error]), :class => 'error', :id => 'flash' if flash[:error] %>
+<p>
+	<form id="contact-form" method="post" action="send_satisfaction_survey">
+		<%= token_tag %>
+  	<p><label for="survey_author">Your name</label><input type="text" id="contact_author" name="survey[author]" value="" /></p>
+		<script type="text/javascript" charset="utf-8">
+			var contact_author = new LiveValidation('contact_author', {onlyOnBlur: true });
+			contact_author.add(Validate.Presence, {"validMessage": ""});
+		</script>
+  	<p><label for="survey_author_email">Email Address</label><input type="text" id="survey_author_email" name="survey[author_email]" value="" /></p>
+		<script type="text/javascript" charset="utf-8">
+			var survey_author_email = new LiveValidation('survey_author_email', {onlyOnBlur: true });
+			survey_author_email.add(Validate.Presence, {"validMessage": ""});
+		</script>
+		<p><label for="survey_author_phone">Phone</label><input type="text" id="survey_author_phone" name="survey[author_phone]" value="" /></p>
+		<script type="text/javascript" charset="utf-8">
+			var survey_author_phone = new LiveValidation('survey_author_phone', {onlyOnBlur: true });
+			survey_author_phone.add(Validate.Presence, {"validMessage": ""});
+		</script>
+		<p><label for="survey_author_address_1">Address 1</label><input type="text" id="survey_author_address_1" name="survey[author_address_1]" value="" /></p>
+		<script type="text/javascript" charset="utf-8">
+			var survey_author_address_1 = new LiveValidation('survey_author_address_1', {onlyOnBlur: true });
+			survey_author_address_1.add(Validate.Presence, {"validMessage": ""});
+		</script>
+		<p><label for="survey_author_address_2">Address 2</label><input type="text" id="survey_author_address_2" name="survey[author_address_2]" value="" /></p>
+		<script type="text/javascript" charset="utf-8">
+			var survey_author_address_2 = new LiveValidation('survey_author_address_2', {onlyOnBlur: true });
+			survey_author_address_2.add(Validate.Presence, {"validMessage": ""});
+		</script>
+		<p><label for="survey_author_city">Phone</label><input type="text" id="survey_author_city" name="survey[author_city]" value="" /></p>
+		<script type="text/javascript" charset="utf-8">
+			var survey_author_city = new LiveValidation('survey_author_city', {onlyOnBlur: true });
+			survey_author_city.add(Validate.Presence, {"validMessage": ""});
+		</script>
+		<p><label for="survey_author_state">State</label><input type="text" id="survey_author_state" name="survey[author_state]" value="" /></p>
+		<script type="text/javascript" charset="utf-8">
+			var survey_author_state = new LiveValidation('survey_author_state', {onlyOnBlur: true });
+			survey_author_state.add(Validate.Presence, {"validMessage": ""});
+		</script>
+		<p><label for="survey_author_zip">Zip Code</label><input type="text" id="survey_author_zip" name="survey[author_zip]" value="" /></p>
+		<script type="text/javascript" charset="utf-8">
+			var survey_author_zip = new LiveValidation('survey_author_zip', {onlyOnBlur: true });
+			survey_author_zip.add(Validate.Presence, {"validMessage": ""});
+		</script>
+		<p><label for="survey_date_of_appt">Date of Appointment</label>
+			<%= select_date %></p>
+		<script type="text/javascript" charset="utf-8">
+			var survey_date_of_appt = new LiveValidation('survey_date_of_appt', {onlyOnBlur: true });
+			survey_date_of_appt.add(Validate.Presence, {"validMessage": ""});
+		</script>
+  	<p><label for="survey_reason_for_appt">Reason for Appointment</label> 
+       <select id="survey_reason_for_appt" name="survey[reason_for_appt]">
+         <option value="Service_Question">Service Questions</option>
+         <option value="General_Allergy_Question">General Allergy Information</option>
+         <option value="Employment">Employment</option>
+			 	<option value="Research_Studies">Research Studies</option>
+			 	<option value="Media_and_Press">Media &amp; Press</option>
+       </select>
+    </p>
+  	<p><label for="survey_caregiver_seen">Caregiver Seen</label> 
+       <select id="survey_caregiver_seen" name="survey[caregiver_seen]">
+         <option value="Service_Question">Service Questions</option>
+         <option value="General_Allergy_Question">General Allergy Information</option>
+         <option value="Employment">Employment</option>
+			 	<option value="Research_Studies">Research Studies</option>
+			 	<option value="Media_and_Press">Media &amp; Press</option>
+       </select>
+    </p>
+  	<p><label for="contact_body">Your Message</label> <textarea id="contact_body" name="survey[message]" rows=10></textarea></p>
+  	<p><input type="submit" value="Send Your Message" /></p>
+	</form>
+</p>
