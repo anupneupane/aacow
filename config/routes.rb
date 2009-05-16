@@ -21,6 +21,7 @@ ActionController::Routing::Routes.draw do |map|
     page.our_services 'our_services', :action => 'our_services'
     page.disclaimer 'disclaimer', :action => 'disclaimer'
     page.site_map 'site_map', :action => 'site_map'
+    page.get_pollen_count 'get_pollen_count', :action => 'get_pollen_count'
   end
   
   map.send_contact_form '/send_contact_form', :controller => 'pages', :action => 'send_contact_form'

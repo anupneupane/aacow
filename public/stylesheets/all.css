@@ -377,7 +377,7 @@ ul.sub_list li{
 #main-column .view-box p{
 	overflow:hidden;
 	margin:0;
-	padding:6px 7px 5px;
+	padding:25px 7px 5px;
 	font-size:11px;
 	color:#112353;
 }
@@ -385,10 +385,26 @@ ul.sub_list li{
 	text-indent:-9999px;
 	width:54px;
 	height:54px;
-	background:url(../images/icon-plus.gif) no-repeat;
+	/*background:url(../images/icon-plus.gif) no-repeat;*/
 	position:absolute;
 	top:5px;
 	right:7px;
+}
+#main-column div.view-box div.view-links {
+	position:absolute;
+	margin-left: -7px;
+	top:20px;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+}
+#main-column div.view-box div.view-links a {
+	text-decoration: none;
+	font-size: 13px;
+}
+#main-column div.view-box div.view-links a.active {
+	color: #000;
 }
 /*-- sidebar --*/
 #sidebar{

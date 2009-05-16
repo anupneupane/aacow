@@ -1,4 +1,7 @@
 <% @page_title = 'Welcome' %>
+<%- content_for :head do -%>
+	<%= javascript_include_tag 'swfobject' %>
+<%- end -%>
 <%- content_for :right do -%>
 <div class="box blue-box">
 	<p>Our goal is to make sure every patient goes home happier and healthier.</p>
@@ -42,9 +45,15 @@
 	<div class="container-foot">
 		<h2>YOUR DAILY POLLEN COUNT</h2>
 		<div class="view-box">
-			<img src="images/img-replace.jpg" alt=""/>
+			<div class="view-links">
+				<%= link_to "weeds", root_path(:pollen_count => 'weeds'), request.request_uri.match(/=weeds/) ? {:class => 'active'} : {:class => ''} %> |
+				<%= link_to "trees", root_path(:pollen_count => 'trees'), request.request_uri.match(/=trees/) || request.request_uri == root_path ? {:class => 'active'} : {:class => ''} %> |
+				<%= link_to "fungi", root_path(:pollen_count => 'fungi'), request.request_uri.match(/=fungi/) ? {:class => 'active'} : {:class => ''} %> |
+				<%= link_to "grass", root_path(:pollen_count => 'grass'), request.request_uri.match(/=grass/) ? {:class => 'active'} : {:class => ''} %>
+			</div>
+			<%= image_tag @graph %>
 			<a href="#" class="view">view</a>
-			<p>View by:</p>
+			<p>As of: <%= @pollen_count.date %></p>
 		</div>
 	</div>
 </div>
