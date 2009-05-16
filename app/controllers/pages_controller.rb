@@ -29,14 +29,14 @@ class PagesController < ApplicationController
   
   def graph_code
     @pollen_count = PollenCount.find(:first, :order => 'date desc')
-    bar = BarGlass.new
+    #bar = BarGlass.new
     bar.on_click = "alert('hello there')"
     bar.set_values((1..9).to_a)
     @values = [@pollen_count.grass, @pollen_count.trees, @pollen_count.weeds, @pollen_count.fungi]
     @values = @values.select{|v| !v.zero?}
     bar.values  = @values
     
-    chart = OpenFlashChart.new
+    #chart = OpenFlashChart.new
     chart.bg_colour = '#FFFFFF'
     chart.add_element(bar)
     
