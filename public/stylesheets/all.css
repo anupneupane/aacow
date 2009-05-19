@@ -152,12 +152,16 @@ ul.nav li.active a{
 	background:#fff url(../images/bg-content.jpg) no-repeat 50% 0;
 }
 #content .holder{
-	min-height:330px;
+	min-height:540px;
 	height:1%;
 	overflow:hidden;
 }
 * html #content .holder {
-	height:330px;
+	height:560px;
+	overflow:visible;
+}
+*:first-child+html #content .holder {
+	height:560px;
 	overflow:visible;
 }
 /*-- main-column --*/
@@ -512,9 +516,10 @@ ul.sub_list li{
 	font-weight:bold;
 	font-family:Arial, Helvetica, sans-serif;
 	border-top:3px solid #a1be4a;
-	overflow:hidden;
+	overflow: hidden;
 	line-height:19px;
 	padding:10px 0 0;
+	background: #112353;
 }
 #footer .holder{
 	width:887px;
