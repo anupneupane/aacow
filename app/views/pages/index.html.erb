@@ -6,7 +6,7 @@
 <div class="box blue-box">
 	<p>Our goal is to make sure every patient goes home happier and healthier.</p>
 	<p class="note"><strong>Let us know how we are doing.</strong></p>
-	<div class="foot"><a href="patients/satisfaction">SUBMIT FEEDBACK</a></div>
+	<div class="foot"><%= link_to "SUBMIT FEEDBACK", patients_satisfaction_path %></div>
 </div>
 <%= render :partial => 'layouts/vcard' %>
 <%- end -%>
@@ -15,29 +15,29 @@
 <div class="info">
 	<strong class="heading">Meet our doctors and staff:</strong>
 	<ul class="link-list">
-		<li><a href="/about_us">Pramila  K. Daftary, MD, FACAI, FAACA</a></li>
+		<li><a href="/about_us">Patricia Tatum, RN, FNP-C</a></li>
 	</ul>
 </div>
 <div class="container">
 	<div class="container-foot">
 		<h2>LEARN MORE ABOUT ALLERGIES AND ASTHMA</h2>
 		<div class="post">
-			<div class="image-holder image-left"><a href="tips"><img src="images/img-photo-1.jpg" alt=""/></a></div>
-			<h3 class="large"><a href="tips">Tips for allergy sufferers</a></h3>
+			<div class="image-holder image-left"><a href="tips"><%= link_to image_tag('img-photo-1.jpg'), patients_tips_path %></div>
+			<h3 class="large"><%= link_to "Tips for allergy sufferers", patients_tips_path %></h3>
 			<p>Here are some useful tips for allergy sufferers to help alleviate the pitfalls of allergies.</p>
-			<a href="tips" class="more">View tips for alleving allergies</a>
+			<%= link_to "View tips for alleving allergies", patients_tips_path, :class => 'more' %>
 		</div>
 		<div class="post">
-			<div class="image-holder image-left"><a href="tips"><img src="images/img-photo-2.jpg" alt=""/></a></div>
-			<h3><a href="tips">Why I should I see an Allergist?</a></h3>
+			<div class="image-holder image-left"><%= link_to image_tag('img-photo-2.jpg'), patients_tips_path %></div>
+			<h3><%= link_to "Why I should I see an Allergist?", patients_tips_path %></h3>
 			<p>Learn the facts about why seeing an Allergist can be beneficial to your overall health and well being.</p>
-			<a href="tips" class="more">Learn the right time to see an allergist</a>
+			<%= link_to "Learn the right time to see an allergist", patients_tips_path, :class => 'more' %>
 		</div>
 		<div class="post">
-			<div class="image-holder image-left"><a href="tips"><img src="images/img-photo-3.jpg" alt=""/></a></div>
-			<h3><a href="#">Understanding Allergies &amp; Asthma</a></h3>
+			<div class="image-holder image-left"><%= link_to image_tag('img-photo-3.jpg'), patients_tips_path %></div>
+			<h3><%= link_to "Understanding Allergies &amp; Asthma", patients_tips_path %></h3>
 			<p>Asthma has often been described as a wheezing sound when you breathe, but asthma is so much more! </p>
-			<a href="tips" class="more">Get the facts about asthma</a>
+			<%= link_to "Get the facts about asthma", patients_tips_path, :class => 'more' %>
 		</div>
 	</div>
 </div>

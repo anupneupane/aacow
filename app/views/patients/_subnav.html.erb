@@ -8,9 +8,9 @@
 	<li<%= " class='active'" if request.request_uri == patients_tips_path %>>
 		<a <%= "class='active'" if request.request_uri == patients_tips_path %> href="/patients/tips" title="View your order history.">Tips</a>
 	</li>
-	<li<%= " class='active'" if request.request_uri == patients_records_path %>>
-		<a <%= "class='active'" if request.request_uri == patients_records_path %> href="/patients/records">Records</a>
-	</li>
+	<!-- <li<%# " class='active'" if request.request_uri == patients_records_path %>>
+		<a <%# "class='active'" if request.request_uri == patients_records_path %> href="/patients/records">Records</a>
+	</li> -->
 	<li<%= " class='active'" if request.request_uri == patients_schedule_path %>>
 		<a <%= "class='active'" if request.request_uri == patients_schedule_path %> href="/patients/schedule">Schedule an Appointment</a>
 	</li>

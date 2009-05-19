@@ -5,10 +5,8 @@ class PagesController < ApplicationController
   require 'hpricot'
   require 'mechanize'
   require 'uri'
-  require 'net/https'
   WWW::Mechanize.html_parser = Hpricot
    
-  
   def index
     @pollen_count = PollenCount.find(:first, :order => 'date desc')
     if params[:pollen_count] == 'trees'

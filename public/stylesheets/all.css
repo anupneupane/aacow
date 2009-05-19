@@ -183,6 +183,12 @@ ul.nav li.active a{
 	color:#112353;
 	background:url(../images/bg-dots.gif) repeat-x 0 100%;
 }
+#main-column .anchor {
+	margin:0;
+	font-weight:normal;
+	font-size:15px;
+	color:#112353;
+}
 #main-column h3{
 	color:#112353;
 	font-size:12px;

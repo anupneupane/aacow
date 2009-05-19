@@ -24,7 +24,8 @@
 <div class="box green-box">
 	<p>Help us understand more about how to better combat allergies.</p>
 	<p class="note"><strong>Join our allergy research team</strong></p>
-	<div class="foot"><a href="#">PARTICIPATION INFO</a></div>
+	<p class="note">Subject line: Research Studies</p>
+	<div class="foot"><%= link_to "PARTICIPATION INFO", contact_us_path %></div>
 </div>
 <%= render :partial => 'layouts/vcard' %>
 <%- end -%>
@@ -34,17 +35,18 @@
 	<p>We strive to treat each patient as an individual with different needs and work with patients to get their input on treatment options that will work best with their lifestyle and schedule.</p>
 	<p>One of our main goals is to improve each patient’s quality of life by better controlling the symptoms associated with their allergies and/or asthma. Our treatment options are intended to prevent flares in symptoms, but we gladly assist patients when they do have flares in symptoms to quickly get them back to their daily activities.</p>
 	<p>Once allergy testing is done, we review allergen avoidance with all patients as a primary prevention of symptoms. Our staff provides comprehensive information and handouts regarding how to avoid the identified allergens. Other treatment options include medications to treat your symptoms and if indicated, allergy injections may be needed.</p>
-	<h2>What you should have before your visit and what to expect during your first visit to our clinic.</h2>
-	<p>When arriving for your first visit, please have the new patient forms completed. They can be accessed at the link below or will be mailed to you in advance of your appointment, just let the person scheduling your appointment know.  Individual forms can be downloaded at the bottom of this page.</p>
-	<div class="container large-container">
-		<div class="container-foot">
-			<h2>NEW PATIENT FORMS:</h2>
-			<ul class="pdf-list">
-				<li><a href="#">Form one</a></li>
-				<li><a href="#">Form two</a></li>
-			</ul>
-		</div>
-	</div>
+	<h2>What should you expect during your first visit to our clinic.</h2>
+	<p>When arriving for your first visit, you will have the new patient forms to complete. They can be be mailed to you in advance of your appointment by calling <strong>(254) 753-3646</strong>, just let the person scheduling your appointment know.</p>
+<p>Once you've received the forms, please read them over and complete them prior to your first visit. If you are unable to complete the forms at home, please arrive 20 minutes before your scheduled appointment, as you will need to complete them before being seen.</p>
+	<!-- <div class="container large-container">
+			<div class="container-foot">
+				<h2>NEW PATIENT FORMS:</h2>
+				<ul class="pdf-list">
+					<li><a href="#">Form one</a></li>
+					<li><a href="#">Form two</a></li>
+				</ul>
+			</div>
+		</div> -->
 	<h2>Insurance information</h2>
 	<p>Our office accepts most of the major HMO and PPO insurance plans in addition to Medicaid and Medicare. 
 	Please have your insurance card and referral on hand upon arriving at the Clinic. Your insurance information will be reviewed regarding coverage of your visit and possible allergy testing that will be done that day.</p>
@@ -92,20 +94,19 @@
 	
 	<p>We hope this description has answered many of your questions about the first visit to our office. We are always here to help and answer any additional questions you may have. Please do not hesitate to ask! You may also view our FAQ (link: …/faq) for a few additional answers.</p>
 	
-	<p>If you are ready to schedule you can set your appointment here <%= link_to 'schedule', patients_schedule_path %> or call our offices at (254) 753-3646.</p>
+	<p>If you are ready to schedule you can set your appointment here <%= link_to 'schedule', patients_schedule_path %> or call our offices at <strong>(254) 753-3646</strong>.</p>
 	
 	<p>Need our Clinic hours and driving directions? Click here.  <%= link_to 'contact us', contact_us_path %> </p>
 	
-	<div class="container large-container">
-		<div class="container-foot">
-			<h2>INDIVIDUAL NEW PATIENT FORMS:</h2>
-			<ul class="pdf-list">
-				<li><a href="#">Patient Information</a></li>
-				<li><a href="#">Allergy Profile</a></li>
-				<li><a href="#">Notice of Privacy Practices</a></li>
-				<li><a href="#">Payment Policy</a></li>
-				<li><a href="#">General Clinic Information</a></li>
-			</ul>
-		</div>
-	</div>
-			<p class="quiet">Please read over print these forms and complete them prior to your first visit. If you are unable to complete these forms at home, please arrive 20 minutes before your scheduled appointment, as you will need to complete them before being seen.</p>
+	<!-- <div class="container large-container">
+			<div class="container-foot">
+				<h2>INDIVIDUAL NEW PATIENT FORMS:</h2>
+				<ul class="pdf-list">
+					<li><a href="#">Patient Information</a></li>
+					<li><a href="#">Allergy Profile</a></li>
+					<li><a href="#">Notice of Privacy Practices</a></li>
+					<li><a href="#">Payment Policy</a></li>
+					<li><a href="#">General Clinic Information</a></li>
+				</ul>
+			</div>
+		</div> -->

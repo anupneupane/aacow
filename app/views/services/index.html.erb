@@ -1,7 +1,7 @@
 <%- content_for :right do -%>
 <div class="box blue-box">
 	<p>Until you can get into our office click here for some tips to find relief from your Allergy &amp; Asthma symptoms. </p>
-	<div class="foot"><a href="tips">FIND OUT HOW</a></div>
+	<div class="foot"><%= link_to "FIND OUT HOW", patients_tips_path %></div>
 </div>
 <%= render :partial => 'layouts/vcard' %>
 <%- end -%>
@@ -25,7 +25,6 @@
 	<li>Nebulizer treatments for patients with flares in asthma symptoms.</li>
 	<li>Injections to reduce severe reactions to poison ivy and insect stings.</li>
 </ul>
-
 
 <h2>When is the right time to see an allergist?</h2> 
 
