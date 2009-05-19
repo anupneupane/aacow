@@ -157,11 +157,9 @@ ul.nav li.active a{
 	overflow:hidden;
 }
 * html #content .holder {
-	height:560px;
 	overflow:visible;
 }
 *:first-child+html #content .holder {
-	height:560px;
 	overflow:visible;
 }
 /*-- main-column --*/
