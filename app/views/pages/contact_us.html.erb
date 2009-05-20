@@ -1,15 +1,15 @@
-<%- content_for :head do -%>
-<%= javascript_include_tag 'live_validation' %>
-<%- end -%>
 <% @page_title = 'Contact Us' %>
+<%- content_for :head do -%>
+	<%= javascript_include_tag 'live_validation' %>
+<%- end -%>
 <%- content_for :right do -%>
-<%= render :partial => 'layouts/vcard' %>
+	<%= render :partial => 'layouts/vcard' %>
 <%- end -%>
 <h1>Allergy and Asthma Care of Waco</h1>
 <h4>Phone (254) 753-3646</h4>
 <h4>Fax (254) 753-1411</h4>
 
-<h2>Or email us choosing what best represents your inquiry.</h2>
+<h2>Email us through the below form. Choose from the drop down list what best represents your inquiry</h2>
 <%= content_tag 'div', h(flash[:notice]), :class => 'flash', :id => 'flash' if flash[:notice] %>
 <%= content_tag 'div', h(flash[:error]), :class => 'error', :id => 'flash' if flash[:error] %>
 <p>
@@ -33,7 +33,7 @@
 									<option value="Research_Studies">Research Studies</option>
 									<option value="Media_and_Press">Media &amp; Press</option>
                 </select>
-    </p>
+    </p>	
   	<p><label for="contact_body">Your Message</label> <textarea id="contact_body" name="contact[body]" rows=10></textarea></p>
   	<p><input type="submit" value="Send Your Message" /></p>
 	</form>
@@ -64,6 +64,11 @@ Waco, TX  76708<br/>
 <p>Our office regularly participates in clinical research studies specific to allergy and asthma medications. Depending on the study protocol, participants are evaluated by medical exam and may receive study medication with ongoing evaluations. Participants are usually compensated for their time as a study participant. If interested in finding out more about our current clinical research studies, please call our office at 254-753-3646.</p>
 
 <p>We are currently enrolling participants in the asthma research studies as mentioned in the below ads.</p>
+
+<div class="ads">
+	<%= image_tag 'study1.jpg' %>
+	<%= image_tag 'study2.jpg' %>
+</div>
 
 <h2>Employment Opportunities</h2>
 <p>We seek and employ energetic, compassionate, and talented professionals to become part of our team.  If you are interested in joining a dynamic and progressive organization providing superior treatments for allergic disease, <strong>fill out the form above,</strong> <i>subject line: Employment</i></p>

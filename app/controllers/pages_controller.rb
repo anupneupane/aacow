@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   
-  layout 'secondary'
   require 'rubygems'
   require 'hpricot'
   require 'mechanize'

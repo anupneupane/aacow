@@ -371,6 +371,17 @@ ul.sub_list li{
 	font-size: 9px;
 	background:url(../images/bullet.gif) no-repeat 0 8px;
 }
+ul.sub_list .nom li {
+	background: url(../images/circle.gif) no-repeat 0 8px;
+}
+ul.sub_list .nom li a{
+	text-decoration: underline;
+}
+
+ul.sub_list .nom {
+	padding-bottom: 0;
+	padding-top: 43px;
+}
 .view-box {
 	overflow:hidden;
 	height:272px;
@@ -414,6 +425,16 @@ ul.sub_list li{
 #main-column div.view-box div.view-links a.active {
 	color: #000;
 }
+#main-column div.ads {
+	text-align: center;
+	padding: 3px;
+	width: 100%;
+}
+#main-column div.ads img {
+
+	border:3px #eee solid
+}
+
 /*-- sidebar --*/
 #sidebar{
 	float:left;

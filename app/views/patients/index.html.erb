@@ -5,7 +5,11 @@
 	<ul class="list">
 		<li>Items to bring:
 			<ul class="sub_list">
-				<li>Completed forms </li>
+				<li>Completed forms 
+					<ul class="sub_list nom">
+						<li><%= link_to "new patient packet", 'pdfs/AACOW_NewPatientPacket.pdf' %></li>
+					</ul>
+				</li>
 				<li>Insurance card </li>
 				<li>Referral </li>
 				<li>Questions and allergy concerns</li>
@@ -32,24 +36,21 @@
 <%= render :partial => 'subnav' %>
 
 	<h1>New patients</h1>
-	<p>We strive to treat each patient as an individual with different needs and work with patients to get their input on treatment options that will work best with their lifestyle and schedule.</p>
-	<p>One of our main goals is to improve each patient’s quality of life by better controlling the symptoms associated with their allergies and/or asthma. Our treatment options are intended to prevent flares in symptoms, but we gladly assist patients when they do have flares in symptoms to quickly get them back to their daily activities.</p>
-	<p>Once allergy testing is done, we review allergen avoidance with all patients as a primary prevention of symptoms. Our staff provides comprehensive information and handouts regarding how to avoid the identified allergens. Other treatment options include medications to treat your symptoms and if indicated, allergy injections may be needed.</p>
-	<h2>What should you expect during your first visit to our clinic.</h2>
-	<p>When arriving for your first visit, you will have the new patient forms to complete. They can be be mailed to you in advance of your appointment by calling <strong>(254) 753-3646</strong>, just let the person scheduling your appointment know.</p>
-<p>Once you've received the forms, please read them over and complete them prior to your first visit. If you are unable to complete the forms at home, please arrive 20 minutes before your scheduled appointment, as you will need to complete them before being seen.</p>
-	<!-- <div class="container large-container">
-			<div class="container-foot">
-				<h2>NEW PATIENT FORMS:</h2>
-				<ul class="pdf-list">
-					<li><a href="#">Form one</a></li>
-					<li><a href="#">Form two</a></li>
-				</ul>
-			</div>
-		</div> -->
-	<h2>Insurance information</h2>
-	<p>Our office accepts most of the major HMO and PPO insurance plans in addition to Medicaid and Medicare. 
-	Please have your insurance card and referral on hand upon arriving at the Clinic. Your insurance information will be reviewed regarding coverage of your visit and possible allergy testing that will be done that day.</p>
+	<p>Hello and welcome to Allergy and Asthma Care of Waco. We strive to treat each patient as an individual with different needs and work with patients to get their input on treatment options that will work best with their lifestyle and schedule.</p>
+	<h2>What you should have before your visit and what to expect during your first visit to our clinic.</h2>
+	<h3>Completed new patient packet.</h3>
+	<p>When arriving for your first visit, please have the new patient forms completed. They can be accessed at the link below or will be mailed to you in advance of your appointment, just let the person scheduling your appointment know. Individual forms can be downloaded at the bottom of this page.</p>
+	<div class="container large-container">
+		<div class="container-foot">
+			<h2>NEW PATIENT FORMS:</h2>
+			<ul class="pdf-list">
+				<li><%= link_to "New Patient Packet", 'pdfs/AACOW_NewPatientPacket.pdf' %></li>
+			</ul>
+		</div>
+	</div>
+	<h3>Insurance information</h3>
+	<p>Our office accepts most of the major HMO and PPO insurance plans in addition to Medicaid and Medicare.</p>
+	<p>Please have your insurance card and referral on hand upon arriving at the Clinic. Your insurance information will be reviewed regarding coverage of your visit and possible allergy testing that will be done that day.</p>
 	<!-- <div class="lists">
 		<ul class="list">
 			<li><a href="#"> Insurance option 1</a></li>
@@ -73,10 +74,10 @@
 			<li><a href="#"> Insurance option 15</a></li>
 		</ul>
 	</div> -->
-	<h2>Allergy symptoms and further questions</h2>
+	<h3>Allergy symptoms and further questions</h3>
 	<p>Please write down any questions or concerns prior to your visit so that they can be addressed during your visit. Dr. Daftary will discuss your current allergy/asthma symptoms and past medical history.</p>
 	
-	<h2>During your visit with Dr. Daftary</h2>
+	<h3>During your visit with Dr. Daftary</h3>
 	
 	<p>Several questions will be asked regarding you home and work environment to determine if any changes should be made to your environment to decrease your exposure to allergens. Dr. Daftary will perform an exam to look at your ears, eyes, nose, throat and skin and listen to your heart and lungs.</p>
 	
@@ -84,7 +85,7 @@
 	
 	<p>If you have problems with wheezing, coughing, shortness of breath or chest tightness, Dr. Daftary will evaluate your lung function by having you blow into a mouthpiece several times.</p>
 	
-	<p>Depending on your allergy testing results and pulmonary results, Dr. Daftary will recommend environmental controls, medications to relieve your symptoms and may recommend that you start on allergy injections to decrease your sensitivity to allergens. One of our nurses will also review ways to decrease your exposure to allergens in your home and work environment. </p>
+	<p>Depending on your allergy testing results and pulmonary results, Dr. Daftary will recommend environmental controls, medications to relieve your symptoms and may recommend that you start on allergy injections to decrease your sensitivity to allergens. One of our nurses will also review ways to decrease your exposure to allergens in your home and work environment.</p>
 	
 	<h2>At your next appointments</h2>
 	
@@ -92,21 +93,22 @@
 	
 	<h2>We look forward to seeing you at first visit!</h2>
 	
-	<p>We hope this description has answered many of your questions about the first visit to our office. We are always here to help and answer any additional questions you may have. Please do not hesitate to ask! You may also view our FAQ (link: …/faq) for a few additional answers.</p>
+	<p>We hope this description has answered many of your questions about the first visit to our office. We are always here to help and answer any additional questions you may have. Please do not hesitate to ask! You may also view our <%= link_to "FAQ", patients_faq_path %> for a few additional answers.</p>
 	
-	<p>If you are ready to schedule you can set your appointment here <%= link_to 'schedule', patients_schedule_path %> or call our offices at <strong>(254) 753-3646</strong>.</p>
+	<p>If you are ready to schedule you can call our offices at <strong>(254) 753-3646</strong>.</p>
 	
 	<p>Need our Clinic hours and driving directions? Click here.  <%= link_to 'contact us', contact_us_path %> </p>
 	
-	<!-- <div class="container large-container">
-			<div class="container-foot">
-				<h2>INDIVIDUAL NEW PATIENT FORMS:</h2>
-				<ul class="pdf-list">
-					<li><a href="#">Patient Information</a></li>
-					<li><a href="#">Allergy Profile</a></li>
-					<li><a href="#">Notice of Privacy Practices</a></li>
-					<li><a href="#">Payment Policy</a></li>
-					<li><a href="#">General Clinic Information</a></li>
-				</ul>
-			</div>
-		</div> -->
+	<div class="container large-container">
+		<div class="container-foot">
+			<h2>INDIVIDUAL NEW PATIENT FORMS:</h2>
+			<ul class="pdf-list">
+				<li><%= link_to "Patient Information", 'pdfs/AACOW_PatientInfo.pdf' %></li>
+				<li><%= link_to "Allergy Profile", 'pdfs/AACOW_AllergyProfile.pdf' %></li>
+				<li><%= link_to "Notice of Privacy Practices", 'pdfs/AACOW_Privacy.pdf' %></li>
+				<li><%= link_to "Payment Policy", 'pdfs/AACOW_PaymentPolicy.pdf' %></li>
+				<li><%= link_to "General Clinic Information", 'pdfs/AACOW_Previsit.pdf' %></li>
+			</ul>
+		</div>
+	</div>
+		<p class='quiet'>Please read over print these forms and complete them prior to your first visit. If you are unable to complete these forms at home, please arrive 20 minutes before your scheduled appointment, as you will need to complete them before being seen.</p>
