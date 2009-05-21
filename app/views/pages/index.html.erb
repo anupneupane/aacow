@@ -52,8 +52,18 @@
 				<%= link_to "grass", root_path(:pollen_count => 'grass'), request.request_uri.match(/=grass/) ? {:class => 'active'} : {:class => ''} %>
 			</div>
 			<%= image_tag @graph %>
-			<a href="#" class="view">view</a>
+			<a id="view" href="#" class="view">view</a>
 			<p>As of: <%= @pollen_count.date %></p>
 		</div>
+		<script type="text/javascript" charset="utf-8">
+		new Tip('view', "<p><span style='color:#028a02'><b>Low</b></span> - Tend to affect very few individuals among the allergy-suffering public.</p><p><span style='color:#92ef34'><b>Low-Medium</b></span> - Tend to start affecting individuals extremely sensitive to the predominant pollen.</p><p><span style='color:#dada05'><b>Medium</b></span> - Will likely cause symptoms for many individuals who suffer from allergies to the predominant pollen types of the season.</p><p><span style='color:#ff9a03'><b>Medium-High</b></span> - Tend to affect a large number of individuals who suffer from the pollen types of the season.</p><p><span style='color:#ff2525'><b>High</b></span> - Tend to affect most individuals who suffer from the pollen types of the season. Symptoms may become more severe during days with high pollen levels.</p>", {
+						title: "Pollen Count Description",
+						stem: 'bottomMiddle',
+						hideOn: { element: 'closeButton', event: 'click'},
+						hook: { target: 'topMiddle', tip: 'bottomMiddle' },
+						offset: { x: 5, y: -3 }
+					});
+
+		</script>
 	</div>
 </div>

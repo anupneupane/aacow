@@ -404,7 +404,7 @@ ul.sub_list .nom {
 	text-indent:-9999px;
 	width:54px;
 	height:54px;
-	/*background:url(../images/icon-plus.gif) no-repeat;*/
+	background:url(../images/icon-plus.gif) no-repeat;
 	position:absolute;
 	top:5px;
 	right:7px;
