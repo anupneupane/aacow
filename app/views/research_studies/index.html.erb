@@ -1,0 +1,18 @@
+<h1>Allergy and Asthma Care of Waco</h1>
+<p>Here is a list of our current and upcoming research studies.  If you're interested in participating or learning more, fill out the form below or contact Cheryl at <strong> (254) 753-3646 extension #208</strong>.</p>
+<%- @research_studies.each do |research_study| -%>
+<div class="container large-container">
+	<div class="container-foot">
+		<h2><%= research_study.title.upcase %></h2>
+		<%= content_tag :p, "#{research_study.starts_at.strftime('%B, %d %Y')} to #{research_study.ends_at.strftime('%B, %d %Y')}", :class => 'date' if research_study.starts_at %>
+		<p><%= research_study.description %></p>
+	</div>
+</div>
+<%- end -%>
+<%= will_paginate @research_studies, :params => params if @research_studies %>
+<h2>Email us. Choose from the drop down list what best represents your inquiry.</h2>
+<%= content_tag 'div', h(flash[:notice]), :class => 'flash', :id => 'flash' if flash[:notice] %>
+<%= content_tag 'div', h(flash[:error]), :class => 'error', :id => 'flash' if flash[:error] %>
+<p>
+	<%= render :partial => 'shared/contact_form' %>
+</p>

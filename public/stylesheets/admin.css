@@ -35,7 +35,8 @@ p {
 }
 
 #container table {
-  border-bottom: 1px dotted #333333;
+	width:100%;
+
 }
 
 #container table tr th {
@@ -49,8 +50,7 @@ p {
 }
 
 #container table tr {
-  border-left: 1px dotted #333333;
-  border-right: 1px dotted #333333;
+
 }
 
 #container table tr.header {
@@ -59,6 +59,14 @@ p {
 
 #container table tr.odd {
   background-color: #F5F5F5;
+}
+
+#container table tr td.fixed {
+  min-width:600px;
+}
+
+#container table tr .rt {
+	text-align:right;
 }
 
 #container table tr.info {
@@ -136,13 +144,19 @@ select {
 }
 
 form.horizontal label {
-  width: auto;
   text-align: left;
   float: none;
+	text-indent: 5px;
+	margin-left: 30px;
 }
 
 .input-field input {
   text-indent: 5px;
+}
+
+.input-field textarea, .input-field input {
+		border: 1px solid #888;
+		width: 500px;
 }
 
 form.horizontal .input-field  {
@@ -187,6 +201,48 @@ form.horizontal .input-button input {
 form.horizontal .input-indent {
   margin: 0 0 0 30px;
 }
+
+#notice {
+	border: 1px solid #cc5200;
+	background-color: #341906;
+	clear: both;
+	padding: ;
+	color: #ffd520;
+	height: 41px;
+}
+
+input.huge, textarea.huge {
+  font-size: 16px;
+  padding: 5px;
+}
+
+div.submit {
+	margin-top:10px;
+}
+
+a.big {
+	font-size:14px;
+}
+
+input.submit {
+  background-color: #ccc;
+  border-width: 0;
+  cursor: pointer;
+  font-size: 14px;
+  padding: .5em 2em;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+dl.form dt {
+  font-size: 14px;
+}
+
+dl.form dd {
+  margin: 0 0 2em 0;
+}
+
 
 .red {
   color: red;
@@ -274,6 +330,12 @@ form.horizontal .input-indent {
 
 #menu li a.right {
   float: right;
+}
+
+#sub-nav {
+	padding:0 0 10px 0;
+	width:100%;
+	border-bottom:1px solid #eee;
 }
 
 #container {

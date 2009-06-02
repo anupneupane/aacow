@@ -5,44 +5,20 @@
 <%- content_for :right do -%>
 	<%= render :partial => 'layouts/vcard' %>
 <%- end -%>
-<h1>Allergy and Asthma Care of Waco</h1>
-<h4>Phone (254) 753-3646</h4>
-<h4>Fax (254) 753-1411</h4>
 
-<h2>Email us through the below form. Choose from the drop down list what best represents your inquiry</h2>
+<%= render :partial => 'shared/contact_info' %>
+
+<h2>Email us. Choose from the drop down list what best represents your inquiry.</h2>
 <%= content_tag 'div', h(flash[:notice]), :class => 'flash', :id => 'flash' if flash[:notice] %>
 <%= content_tag 'div', h(flash[:error]), :class => 'error', :id => 'flash' if flash[:error] %>
 <p>
-	<form id="contact-form" method="post" action="send_contact_form">
-		<%= token_tag %>
-  	<p><label for="contact_author">Your name</label><input type="text" id="contact_author" name="contact[author]" value="" /></p>
-		<script type="text/javascript" charset="utf-8">
-			var contact_author = new LiveValidation('contact_author', {onlyOnBlur: true });
-			contact_author.add(Validate.Presence, {"validMessage": ""});
-		</script>
-  	<p><label for="contact_author_email">Email Address</label><input type="text" id="contact_author_email" name="contact[author_email]" value="" /></p>
-		<script type="text/javascript" charset="utf-8">
-			var contact_author_email = new LiveValidation('contact_author_email', {onlyOnBlur: true });
-			contact_author_email.add(Validate.Presence, {"validMessage": ""});
-		</script>
-  	<p><label for="contact_subject">Subject</label> 
-                <select id="contact_subject" name="contact[subject]">
-                  <option value="Service_Question">Service Questions</option>
-                  <option value="General_Allergy_Question">General Allergy Information</option>
-                  <option value="Employment">Employment</option>
-									<option value="Research_Studies">Research Studies</option>
-									<option value="Media_and_Press">Media &amp; Press</option>
-                </select>
-    </p>	
-  	<p><label for="contact_body">Your Message</label> <textarea id="contact_body" name="contact[body]" rows=10></textarea></p>
-  	<p><input type="submit" value="Send Your Message" /></p>
-	</form>
+	<%= render :partial => 'shared/contact_form' %>
 </p>
 
 <h2>We are located at:</h2>
-<p class="address">3115 Pine Avenue in the Hillcrest Medical Tower, Suite 1008.<br/>
+<p class="address">221 Jewell Dr., Waco, TX 76712<br/>
 Waco, TX  76708<br/>
-<a href="http://maps.google.com/maps?saddr=&amp;daddr=3115+Pine+Ave+%23+1008,+Waco,+TX+76708+(Allergy+%26+Asthma+Care+of+Waco)" target="_blank">Get directions</a></p>
+<a href="http://maps.google.com/maps?saddr=&amp;daddr=221+Jewell+Dr+%23,+Waco,+TX+76712+(Allergy+%26+Asthma+Care+of+Waco)" target="_blank">Get directions</a></p>
 
 <h2>Clinic hours</h2>
 

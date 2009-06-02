@@ -1,0 +1,10 @@
+<%= f.error_messages %>
+<dl class="form">
+	<dt><%= f.label :title, "Title" %></dt>
+	<dd class="input-field"><%= f.text_field :title, :class => 'huge' %></dd>
+	<dt><%= f.label :starts_at, "Begins and Ends" %></dt>
+	<dd class="input-field"><%= f.date_select :starts_at, :class => 'huge' %> - <%= f.date_select :ends_at, :class => 'huge' %></dd>
+	<dt><%= f.label :description, "Description" %></dt>
+	<dd class="input-field"><%= f.text_area :description, :class => 'huge' %></dd>
+</dl>
+<div class="submit input-button"><%= f.submit %></div>

@@ -319,6 +319,11 @@ a.more {
 	background:url(../images/bg-large-container-foot.jpg) no-repeat 0 100%;
 }
 #main-column .large-container h2{ background:url(../images/bg-large-container-head.gif) no-repeat;}
+#main-column .large-container p.date {font-weight:bold;margin-top:4px;}
+ul.pdf-list {
+	margin:0;
+	padding:5px 13px 0;
+}
 ul.pdf-list {
 	margin:0;
 	padding:5px 13px 0;

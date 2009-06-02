@@ -1,12 +1,5 @@
-<h1>Editing research stdy</h1>
-
-<% form_for :research_study, @research_study, :url => { :action => "update" } do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<h1>Editing research study</h1>
+<div id='sub-nav'><%= link_to 'Back', admin_research_studies_path %></div>
+<% form_for @research_study, :url => admin_research_study_path(@research_study), :html => {:class=>'horizontal'} do |f| %>
+ <%= render :partial => 'form', :locals => {:f => f} %>
 <% end %>
-
-<%= link_to 'Show', admin_research_study_path(@research_study) %> |
-<%= link_to 'Back', admin_research_studies_path %>

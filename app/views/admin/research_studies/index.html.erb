@@ -1,14 +1,18 @@
 <h1>Listing research studies</h1>
 
 <table>
-  <tr>
-  </tr>
-
+	<tr>
+	<th>TITLE</th>
+	<th>DESCRIPTION</th>
+	<th class="rt">ACTIONS</th>
+	</tr>
 <% @research_studies.each do |research_study| %>
-  <tr>
-    <td><%= link_to 'Show', research_study %></td>
-    <td><%= link_to 'Edit', edit_admin_research_study_path(research_study) %></td>
-    <td><%= link_to 'Destroy', admin_research_study_path(research_study), :confirm => 'Are you sure?', :method => :delete %></td>
+  <tr class="<%= cycle('', 'odd') %>">
+		<td><%= research_study.title %></td>
+		<td class="fixed"><%= truncate research_study.description, :length => 100 %></td>
+    <td class="rt"><%= link_to 'Edit', edit_admin_research_study_path(research_study) %>
+				<%= link_to 'Destroy', admin_research_study_path(research_study), :confirm => 'Are you sure?', :method => :delete %>
+		</td>
   </tr>
 <% end %>
 </table>

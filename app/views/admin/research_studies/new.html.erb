@@ -1,11 +1,7 @@
 <h1>New research study</h1>
 
-<% form_for :research_study, @research_study, :url => { :action => "create" } do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+<% form_for :research_study, @research_study, :url => { :action => "create" }, :html => {:class=>'horizontal'} do |f| %>
+ <%= render :partial => 'form', :locals => {:f => f} %>
 <% end %>
 
 <%= link_to 'Back', admin_research_studies_path %>

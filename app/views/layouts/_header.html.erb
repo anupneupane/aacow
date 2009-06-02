@@ -4,17 +4,17 @@
 			<div class="user-area-bg">
 				<div class="user-area-content">
 					<ul>
-						<li></li>
-						<li><%= link_to 'MAKE AN APPOINTMENT', patients_schedule_path %></a></li>
+						<li><%= link_to 'ALLERGY STUDIES', research_studies_path %></li>
+						<li><%= link_to 'MAKE AN APPOINTMENT', patients_schedule_path %></li>
 					</ul>
 					<p>Now accepting new patients</p>
 				</div>
 			</div>
 			<div class="user-area-foot">&nbsp;</div>
 		</div>
-		<strong class="logo"><%= link_to "Home", root_path , :rel => "home"  %></strong>
+		<strong class="logo"><%= link_to "Home", root_path, :rel => "home"  %></strong>
 		<ul class="nav">
-			<li <%= "class='active'" if request.request_uri.match(/\?pollen_count/) || request.request_uri == root_path  %>><%= link_to "Home", root_path , :class => "home"  %></li>
+			<li <%= "class='active'" if request.request_uri.match(/\?pollen_count/) || request.request_uri == root_path  %>><%= link_to "Home", root_path, :class => "home"  %></li>
 			<li <%= "class='active'" if request.request_uri == about_us_path %>><%= link_to "About Us", about_us_path, :class => "about-us" %></li>
 			<li <%= "class='active'" if request.request_uri.match(/services/)  %>><%= link_to "Our Services", services_path, :class => "our-services" %></li>
 			<li <%= "class='active'" if request.request_uri.match(/patients/) %>><%= link_to "Patients", patients_path, :class => "patients" %></li>
