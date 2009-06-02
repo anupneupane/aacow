@@ -240,7 +240,6 @@ ul.link-list {
 ul.link-list li {
 	line-height:21px;
 	font-size:11px;
-	display:inline;
 	list-style:none;
 }
 ul.link-list li a{line-height:14px;}
@@ -430,6 +429,8 @@ ul.sub_list .nom {
 #main-column div.view-box div.view-links a.active {
 	color: #000;
 }
+
+#main-column div.container-foot p.view-box-footer{text-align:right;}
 #main-column div.ads {
 	text-align: center;
 	padding: 3px;
@@ -691,3 +692,4 @@ ul.secondary {
 }
 * html .clear { height: 1%; }
 .clear { display: block; }
+.little{font-size:9px;}
