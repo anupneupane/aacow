@@ -2,7 +2,7 @@ log/*.log
 .DS_Store
 database.yml
 config/deploy.rb
-config/initializers/site_keys.rb
+initializers/site_keys.rb
 Capfile
 _projfiles_
 *.swp
