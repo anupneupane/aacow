@@ -8,26 +8,13 @@
 	<% if logged_in? && current_user.admin? -%>
 	<th><%= "Current Status" %></th>
 	<% end -%>
-    <th></th>
-    <th width="1%">Actions</th>
+    <th class="rt">Actions</th>
   </tr>
 <%- unless @users.nil?  -%>
 <% @users.each do |user| -%>  
-  <tr>
-    <td><%= link_to h(user.display_name || user.login), user, :class => (user.admin? ? "admin" : nil) %>
-      <span style="color:#666">
-      <%= "(admin)" if user.admin? %>
-      </span>
-	  </td>
-	<% if logged_in? && current_user.admin? -%>
-		<td><%= user.state %></td>
-	<% end -%>
-    <td class="la">
-      <% unless user.website.blank? %>
-      <%= sanitize link_to(user.website.gsub("http://",""), "http://" + user.website.gsub("http://","")) %>
-      <% end %>
-    </td>
-    <td class="ca inv"><%= user.posts.size %></td>
+  <tr class="<%= cycle "","odd" %>">
+    <td><%= h(user.display_name || user.login) %></td>
+		<td class="rt"><%= link_to "Edit", edit_admin_user_path(user) %> | <%= link_to "Destroy", admin_user_path(user), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

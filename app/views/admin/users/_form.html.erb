@@ -1,0 +1,12 @@
+<%= f.error_messages %>
+<dl class="form">
+	<dt><%= f.label :login, "Login" %></dt>
+	<dd class="input-field"><%= f.text_field :login, :class => 'huge' %></dd>
+	<dt><%= f.label :email, "Email" %></dt>
+	<dd class="input-field"><%= f.text_field :email, :class => 'huge' %></dd>
+	<dt><%= f.label :password, "Password" %></dt>
+	<dd class="input-field"><%= f.password_field :password, :class => 'huge', :autocomplete => :off %></dd>
+	<dt><%= f.label :password_confirmation, "Password Confirmation" %></dt>
+	<dd class="input-field"><%= f.password_field :password_confirmation, :class => 'huge' %></dd>
+</dl>
+<div class="submit input-button"><%= f.submit %></div>

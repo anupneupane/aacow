@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   
   # STI
-  map.resources :services, :employment_opportunities, :users, :research_studies
+  map.resources :services, :employment_opportunities, :research_studies
   
   map.patients '/patients', :controller => 'patients'
   
@@ -29,14 +29,14 @@ ActionController::Routing::Routes.draw do |map|
   map.patient_privacy_practices 'patient_privacy_practices', :controller => 'pages', :action => 'patient_privacy_practices'  
    
   # Admin resources
-  map.admin '/admin', :controller => 'admin/main', :action => 'index'
+  map.admin '/admin', :controller => 'admin/research_studies', :action => 'index'
   map.resources :employment_opportunities, :controller => 'admin/employment_opportunities', :name_prefix => 'admin_', :path_prefix => '/admin'
   map.resources :research_studies, :controller => 'admin/research_studies', :name_prefix => 'admin_', :path_prefix => '/admin'  
   map.resources :employments, :controller => 'admin/opportunities', :name_prefix => 'admin_', :path_prefix => '/admin'
   map.resources :services, :controller => 'admin/services', :name_prefix => 'admin_', :path_prefix => '/admin'
   map.resources :users, :controller => 'admin/users', :name_prefix => 'admin_', :path_prefix => '/admin'
   
-  map.resource :session, :name_prefix => 'admin_', :path_prefix => '/admin'
+  map.resource :session, :controller => 'admin/sessions', :name_prefix => 'admin_', :path_prefix => '/admin'
   # RESTful User actions FOR ADMIN ONLY
   map.logout '/logout', :controller => 'admin/sessions', :action => 'destroy', :name_prefix => 'admin_', :path_prefix => '/admin'  
   map.login '/login', :controller => 'admin/sessions', :action => 'new', :name_prefix => 'admin_', :path_prefix => '/admin'  
