@@ -693,3 +693,8 @@ ul.secondary {
 * html .clear { height: 1%; }
 .clear { display: block; }
 .little{font-size:9px;}
+.count {
+	position: absolute;
+	top: 200px;
+	left: 185px;
+}

@@ -51,6 +51,7 @@
 				<%= link_to "fungi", root_path(:pollen_count => 'fungi'), request.request_uri.match(/=fungi/) ? {:class => 'active'} : {:class => ''} %> |
 				<%= link_to "grass", root_path(:pollen_count => 'grass'), request.request_uri.match(/=grass/) ? {:class => 'active'} : {:class => ''} %>
 			</div>
+			<!-- <div class="count">Count: <%# @count %></div> -->
 			<%= image_tag @graph %>
 			<a id="view" href="#" class="view">view</a>
 			<p>As of: <%= @pollen_count.date %></p>

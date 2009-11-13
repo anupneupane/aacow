@@ -8,19 +8,61 @@ class PagesController < ApplicationController
    
   def index
     @pollen_count = PollenCount.find(:first, :order => 'date desc')
-    if params[:pollen_count] == 'trees'
-      count = @pollen_count.trees/1500.to_f 
-    elsif params[:pollen_count] == 'weeds'
-      count = @pollen_count.weeds/500.to_f
+    if params[:pollen_count] == 'weeds'
+      count = @count = @pollen_count.weeds
+        if count == 0
+          count = 0
+        elsif count <= 9
+          count = 12.5
+        elsif count <= 49
+          count = 50
+        elsif count <= 499
+          count = 75
+        elsif count > 500
+          count = 100
+        end
     elsif params[:pollen_count] == 'fungi'
-      count = @pollen_count.fungi/50000.to_f 
+      count = @count = @pollen_count.fungi
+        if count == 0
+          count = 0
+        elsif count <= 6499
+          count = 12.5
+        elsif count <= 12999
+          count = 50
+        elsif count <= 49999
+          count = 75
+        elsif count > 50000
+          count = 100
+        end
     elsif params[:pollen_count] == 'grass'
-      count = @pollen_count.grass/200.to_f
+      count = @count = @pollen_count.grass
+        if count == 0
+          count = 0
+        elsif count <= 4
+          count = 12.5
+        elsif count <= 19
+          count = 50
+        elsif count <= 199
+          count = 75
+        elsif count > 200
+          count = 100
+        end
     else
-      count = @pollen_count.trees/1500.to_f
+      count = @count = @pollen_count.trees
+      if count == 0
+        count = 0
+      elsif count <= 14
+        count = 12.5
+      elsif count <= 89
+        count = 50
+      elsif count <= 1499
+        count = 75
+      elsif count > 1500
+        count = 100
+      end
     end
     respond_to do |page|
-      page.html { @graph =  Gchart.meter(:data => [count * 100], :encoding => 'text', :size => '264x210', :bar_colors => ['00FF00', 'FFFF00', 'FF0000']) }
+      page.html { @graph =  Gchart.meter(:data => [count], :encoding => 'text', :size => '264x210', :bar_colors => ['00FF00', 'FFFF00', 'FF0000']) }
     end
   end
   
