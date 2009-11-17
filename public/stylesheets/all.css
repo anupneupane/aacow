@@ -394,6 +394,15 @@ ul.sub_list .nom {
 	background:url(../images/bg-view-box.jpg) no-repeat;
 	margin:9px 9px 0 8px;
 }
+.view-box-overlay {
+	background:url(../images/meter_overlay.png) no-repeat;
+	width: 268px;
+	position: absolute;
+	top: 40px;
+	left: 3px;
+	height: 197px;
+
+}
 .view-box img{
 	display:block;
 }
@@ -439,6 +448,12 @@ ul.sub_list .nom {
 #main-column div.ads img {
 
 	border:3px #eee solid
+}
+
+#main-column div.view-box p a {
+	text-decoration: underline;
+	padding-left: 40px;
+	color: #112353;
 }
 
 /*-- sidebar --*/
@@ -694,7 +709,29 @@ ul.secondary {
 .clear { display: block; }
 .little{font-size:9px;}
 .count {
+	cursor: pointer;
 	position: absolute;
-	top: 200px;
-	left: 185px;
+	top: 210px;
+	left: 181px;
+	width: 60px;
+	text-align: center;
+	font-weight: normal;
+	color: #fff;
+	font-size: 16px;
+	font-family: Arial;
+	z-index: 30;
+}
+.nab_scale_popup {
+	background: url(../images/aacow_nab.gif) no-repeat;
+	width: 88px;
+	height: 62px;
+	padding: 4px 0 0 5px;
+}
+.nab_scale_popup span{
+	display: block;
+	color: #000;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 14px;
+	
 }

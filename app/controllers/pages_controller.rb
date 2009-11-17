@@ -21,6 +21,7 @@ class PagesController < ApplicationController
         elsif count > 500
           count = 100
         end
+        @nab_scale = %w(0-9 10-49 50-499 >500)
     elsif params[:pollen_count] == 'fungi'
       count = @count = @pollen_count.fungi
         if count == 0
@@ -34,6 +35,7 @@ class PagesController < ApplicationController
         elsif count > 50000
           count = 100
         end
+        @nab_scale = %w(0-6499 6500-12999 13000-49999 >50000)
     elsif params[:pollen_count] == 'grass'
       count = @count = @pollen_count.grass
         if count == 0
@@ -47,6 +49,7 @@ class PagesController < ApplicationController
         elsif count > 200
           count = 100
         end
+        @nab_scale = %w(0-4 5-19 20-199 >200)
     else
       count = @count = @pollen_count.trees
       if count == 0
@@ -60,6 +63,7 @@ class PagesController < ApplicationController
       elsif count > 1500
         count = 100
       end
+      @nab_scale = %w(0-14 15-89 90-1499 >1500)
     end
     respond_to do |page|
       page.html { @graph =  Gchart.meter(:data => [count], :encoding => 'text', :size => '264x210', :bar_colors => ['00FF00', 'FFFF00', 'FF0000']) }
