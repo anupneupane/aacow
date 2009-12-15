@@ -1,0 +1,3 @@
+<% @page_title = params[:action].titleize %>
+<h1><%= params[:action].titleize %></h1>
+<%= inline_annotated_timeline @data, 700, 361, 'graph', {:annotations => @annotations, :displayExactValues => true} %>

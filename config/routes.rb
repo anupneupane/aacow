@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
     page.schedule 'schedule', :action => 'schedule', :path_prefix => '/patients', :name_prefix => 'patients_'
     page.privacy 'privacy', :action => 'privacy', :path_prefix => '/patients', :name_prefix => 'patients_'
     page.faq 'faq', :action => 'faq', :path_prefix => '/patients', :name_prefix => 'patients_'
-    page.records 'records', :action => 'records', :path_prefix => '/patients', :name_prefix => 'patients_'
+    page.records 'records', :action => 'records', :path_prefix => '/patients', :name_prefix => 'patients_'\
   end
   
   # Static pages
@@ -22,6 +22,7 @@ ActionController::Routing::Routes.draw do |map|
     page.disclaimer 'disclaimer', :action => 'disclaimer'
     page.site_map 'site_map', :action => 'site_map'
     page.get_pollen_count 'get_pollen_count', :action => 'get_pollen_count'
+    page.historical_pollen_count 'historical_pollen_count', :action => 'historical_pollen_count'
   end
   
   map.send_contact_form '/send_contact_form', :controller => 'pages', :action => 'send_contact_form'

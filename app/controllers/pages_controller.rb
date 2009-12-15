@@ -110,11 +110,6 @@ class PagesController < ApplicationController
     end 
   end
   
-  
-  def show
-
-  end
-  
   def send_contact_form
     Pony.mail :to => params[:contact][:to_field],
         :from => params[:contact][:author_email],
@@ -175,6 +170,17 @@ class PagesController < ApplicationController
     			"Message: #{params[:survey][:message]} \n\n"
     			
       return body
+  end
+  
+  def historical_pollen_count
+    @data = {}
+    for pc in PollenCount.all
+      @data.merge! pc.date => { :grass => pc.grass, :trees => pc.trees, :weeds => pc.weeds, :fungi => pc.fungi }
+    end
+    @annotations = {
+      :foo => { 1.day.ago.to_date => ["yesterday", "all my troubles seemed so far away"]},
+      :bar => { 1.day.ago.to_date => ["last tuesday"], 2.days.ago.to_date => ["last monday"]}
+    }
   end
   
 end
