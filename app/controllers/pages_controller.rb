@@ -175,6 +175,20 @@ class PagesController < ApplicationController
   def historical_pollen_count
     params[:pollen_count] ? type = params[:pollen_count].to_sym : type = 'trees'
 
+    if params[:pollen_count] == 'grass'
+      @max = '200'
+      @nab_scale = %w(0-4 5-19 20-199 >200)
+    elsif params[:pollen_count] == 'weeds'
+      @max = '500'
+      @nab_scale = %w(0-9 10-49 50-499 >500)
+    elsif params[:pollen_count] == 'fungi'
+      @max = '50000'
+      @nab_scale = %w(0-6499 6500-12999 13000-49999 >50000)
+    else
+      @max = '1500'
+      @nab_scale = %w(0-14 15-89 90-1499 >1500)
+    end
+
     @data = {}
     for pc in PollenCount.all
       @data.merge! pc.date => { type.to_sym => pc[type] }

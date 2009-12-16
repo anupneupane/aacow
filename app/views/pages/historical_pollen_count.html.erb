@@ -1,17 +1,20 @@
 <% @page_title = params[:action].titleize %>
+<%- content_for :right do -%>
+<%= render :partial => 'layouts/vcard' %>
+<%- numbers = @nab_scale.map{|s| "<span>#{s}</span>"} -%>
+<div id="nab_scale">
+	<strong class="title">NAB SCALE</strong>
+	<p class="nab_scale_popup center"><%= numbers %></p>
+</div>
+<%- end -%>
 <h1 style="padding-left:0"><%= params[:action].titleize %></h1>
 <div id="graph_holder">
-<%= render :partial => 'historical_graph' %>
+<%= inline_annotated_timeline @data, 700, 361, 'graph', {:max => @max} %>
 </div>
-<%# select_tag 'pollen', options_for_select([
-	['weeds', 'weeds'], 
-	['trees', 'trees'],
-	['fungi', 'fungi']
-]) %>
 
-<%# observe_field(:pollen, :url => historical_pollen_count_path, :with => "'pollen_count=' + value", :on => :change) %>
-
-<%= link_to "weeds", historical_pollen_count_path(:pollen_count => 'weeds') %>
-<%= link_to "trees", historical_pollen_count_path(:pollen_count => 'trees') %>
-<%= link_to "fungi", historical_pollen_count_path(:pollen_count => 'fungi') %>
-<%= link_to "grass", historical_pollen_count_path(:pollen_count => 'grass') %>
+<div id="graph-links">
+	<%= active_link_to "trees", historical_pollen_count_path(:pollen_count => 'trees') %>
+	<%= active_link_to "weeds", historical_pollen_count_path(:pollen_count => 'weeds') %>
+	<%= active_link_to "fungi", historical_pollen_count_path(:pollen_count => 'fungi') %>
+	<%= active_link_to "grass", historical_pollen_count_path(:pollen_count => 'grass') %>
+</div>
