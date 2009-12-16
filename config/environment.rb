@@ -21,7 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'mislav-will_paginate', :version => '~> 2.3.2', :lib => 'will_paginate',
       :source => 'http://gems.github.com'
-  config.gem 'active_link_to'
+  #config.gem 'active_link_to'
   
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
