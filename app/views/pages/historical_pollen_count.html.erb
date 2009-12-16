@@ -1,3 +1,17 @@
 <% @page_title = params[:action].titleize %>
-<h1><%= params[:action].titleize %></h1>
-<%= inline_annotated_timeline @data, 700, 361, 'graph', {:annotations => @annotations, :displayExactValues => true} %>
+<h1 style="padding-left:0"><%= params[:action].titleize %></h1>
+<div id="graph_holder">
+<%= render :partial => 'historical_graph' %>
+</div>
+<%# select_tag 'pollen', options_for_select([
+	['weeds', 'weeds'], 
+	['trees', 'trees'],
+	['fungi', 'fungi']
+]) %>
+
+<%# observe_field(:pollen, :url => historical_pollen_count_path, :with => "'pollen_count=' + value", :on => :change) %>
+
+<%= link_to "weeds", historical_pollen_count_path(:pollen_count => 'weeds') %>
+<%= link_to "trees", historical_pollen_count_path(:pollen_count => 'trees') %>
+<%= link_to "fungi", historical_pollen_count_path(:pollen_count => 'fungi') %>
+<%= link_to "grass", historical_pollen_count_path(:pollen_count => 'grass') %>

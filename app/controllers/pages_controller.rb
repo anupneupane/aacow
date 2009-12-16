@@ -173,14 +173,24 @@ class PagesController < ApplicationController
   end
   
   def historical_pollen_count
+    params[:pollen_count] ? type = params[:pollen_count].to_sym : type = 'trees'
+
     @data = {}
     for pc in PollenCount.all
-      @data.merge! pc.date => { :grass => pc.grass, :trees => pc.trees, :weeds => pc.weeds, :fungi => pc.fungi }
+      @data.merge! pc.date => { type.to_sym => pc[type] }
     end
     @annotations = {
       :foo => { 1.day.ago.to_date => ["yesterday", "all my troubles seemed so far away"]},
       :bar => { 1.day.ago.to_date => ["last tuesday"], 2.days.ago.to_date => ["last monday"]}
     }
+    respond_to do |format|
+      format.html
+      format.js {
+        render :update do |page|
+          page['graph_holder'].replace_html(:partial => 'pages/historical_graph', :object => @data)
+        end
+      }
+    end
   end
   
 end
