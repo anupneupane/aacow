@@ -111,7 +111,7 @@ class PagesController < ApplicationController
   end
   
   def send_contact_form
-    Pony.mail :to => 'info@aacow.com',
+    Pony.mail :to => 'info@allergywaco.com',
         :from => params[:contact][:author_email],
         :subject => 'Contact form sent',
         :body => body
