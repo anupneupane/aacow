@@ -535,7 +535,7 @@ ul.sub_list .nom {
 .vcard {
 	font-size:11px;
 	line-height:18px;
-	padding:0 0 0 8px;
+	padding:0 0 0 6px;
 }
 .vcard .fn{ display:none;}
 .vcard h3,
