@@ -800,6 +800,9 @@ ul.secondary {
   	visibility: hidden;
 }
 .list_el img {
+	width: 110px;
+	height: 165px;
+	background: #ddd;
 	float: left;
 	margin-right: 10px;
 	border: 5px solid #ddd;
