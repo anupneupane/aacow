@@ -788,3 +788,19 @@ ul.secondary {
 #graph-links a.active, #graph-links a:hover {
 	background: #0E7CAD;
 }
+.list_el {
+	clear: both;
+	padding: 10px 0 0 0;
+}
+.list_el:after {
+	content: "."; 
+ 	display: block; 
+ 	height: 0; 
+ 	clear: both; 
+  	visibility: hidden;
+}
+.list_el img {
+	float: left;
+	margin-right: 10px;
+	border: 5px solid #ddd;
+}
