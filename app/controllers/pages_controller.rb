@@ -121,7 +121,7 @@ class PagesController < ApplicationController
   end
   
   def send_satisfaction_survey
-    Pony.mail :to => 'jhblacklock@gmail.com',
+    Pony.mail :to => 'info@allergywaco.com',
         :from => params[:survey][:author_email],
         :subject => 'Survey from AACOW',
         :body => survey_body
@@ -193,10 +193,7 @@ class PagesController < ApplicationController
     for pc in PollenCount.all
       @data.merge! pc.date => { type.to_sym => pc[type] }
     end
-    @annotations = {
-      :foo => { 1.day.ago.to_date => ["yesterday", "all my troubles seemed so far away"]},
-      :bar => { 1.day.ago.to_date => ["last tuesday"], 2.days.ago.to_date => ["last monday"]}
-    }
+    
     respond_to do |format|
       format.html
       format.js {
