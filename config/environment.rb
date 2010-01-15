@@ -19,9 +19,14 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'mislav-will_paginate', :version => '~> 2.3.2', :lib => 'will_paginate',
+  config.gem 'mislav-will_paginate', 
+      :version => '~> 2.3.2', 
+      :lib => 'will_paginate',
       :source => 'http://gems.github.com'
-  #config.gem 'active_link_to'
+  config.gem 'weekdays'
+  config.gem 'pony'
+  config.gem 'hpricot'
+  config.gem 'mechanize'
   
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
