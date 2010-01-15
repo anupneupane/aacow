@@ -106,7 +106,10 @@ class PagesController < ApplicationController
       trees = (val/'td')[2].inner_html
       weeds = (val/'td')[3].inner_html
       fungi = (val/'td')[4].inner_html
-      PollenCount.create(:date => Date.parse(day), :grass => grass, :trees => trees, :weeds => weeds, :fungi => fungi)
+      pollen_count = PollenCount.find_or_create_by_date(:date => Date.parse(day), :grass => grass, :trees => trees, :weeds => weeds, :fungi => fungi)
+      unless pollen_count.new_record?
+        pollen_count.update_attributes(:date => Date.parse(day), :grass => grass, :trees => trees, :weeds => weeds, :fungi => fungi)
+      end
     end 
   end
   
